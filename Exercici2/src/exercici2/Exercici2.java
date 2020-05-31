@@ -26,6 +26,7 @@ public class Exercici2 {
 		//FASE 2 ---------------------------------------------------
 		System.out.println(" ****************** INICI FASE 2 **************************");
 			// init the List and assign values, with the name			
+			// assign a number for evaluate the function 'Fr1ncesc"
 		List <Character> Name;
 		Name = new ArrayList<>();
 		Name.add('F');
