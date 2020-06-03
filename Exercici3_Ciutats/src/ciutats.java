@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 /**
- * @author Francesc Nohales
+ * @author Francesc Nohales g
  *
  */
 public class ciutats {
