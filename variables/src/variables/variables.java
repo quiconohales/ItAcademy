@@ -2,7 +2,7 @@ package variables;
 public class variables {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//  
 		
 		// ------FASE 1 -------------------------------------
                 System.out.println("FASE 1 -------------------------------------- " );		
