@@ -17,7 +17,8 @@ public class Exercici4_Restaurant {
 		
 		// FASE 1-------------------------------------------
 		// Inicialitzem variables
-		int b5=5;int b10=10;int b20=20;int b50=500;int b100=100;int b200=200;int b500=500;int total;
+		int b5=5;int b10=10;int b20=20;int b50=500;int b100=100;int b200=200;int b500=500;
+		int total;
 		String[] menu=new String[5];
 		int[] preus=new int[5];
 		
