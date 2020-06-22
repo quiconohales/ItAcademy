@@ -24,7 +24,7 @@ document.writeln(" The city number 6 is "+city6+"<br>");
 // FASE 2 ______________________________________________________
 document.writeln(" "+"<br>");
 document.writeln("  F A S E     2 "+"<br>"+"<br>");
-
+// A question is asked about the names of the cities, and assign the array with the values
 const cities=[city1,city2,city3,city4,city5,city6];
 cities.sort();
 for (let index = 0; index < cities.length; index++) {
@@ -34,7 +34,8 @@ for (let index = 0; index < cities.length; index++) {
 // FASE 3 ______________________________________________________
 document.writeln("  F A S E     3 "+"<br>"+"<br>");
 modified_cities=[];
-
+// The values 'a' are replaced by a '1', the option 'gi' The values a are replaced by a 1
+//allows to replace more than one re
 for (let index1 = 0; index1 < cities.length; index1++) {
 	ciutat=cities[index1];
 	document.writeln(ciutat+"<br>");
@@ -49,6 +50,8 @@ for (let index = 0; index < modified_cities.length; index++) {
 
 // FASE 4 ______________________________________________________
 document.writeln("  F A S E     4 "+"<br>"+"<br>");
+// An array is created for each value, from the previous array.
+// Each letter is placed in a position of the array
 aCity0=[];
 for (let index = 0; index < modified_cities[0].length; index++) {
 	aCity0[index]=modified_cities[0].charAt(index);
