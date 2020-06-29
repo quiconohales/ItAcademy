@@ -25,7 +25,7 @@ public class Main {
 		System.out.println("la matricula es"+car_registration_value);
 		
 		
-		Vehicle car_registration_value = new vehicle();
+		//Vehicle car_registration_value = new vehicle();
 	}
 	class input_matricula{
 		
