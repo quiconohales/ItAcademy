@@ -18,14 +18,9 @@ public class Fases {
 	Scanner scan_plat_desitjat = new Scanner(System.in);
 	
 public void Fase1() {
-		
 	// FASE 1-------------------------------------------
 	// Inicialitzem variables a nivell de clase per fer-las accessibles des de tota la clase
-	
-	
-	
-	
-	}
+		}
 public void Fase2() {
 	
 	// FASE 2-------------------------------------------
