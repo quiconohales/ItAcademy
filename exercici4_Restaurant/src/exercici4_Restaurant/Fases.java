@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class Fases {
 
-	
-	int b5=5;int b10=10;int b20=20;int b50=500;int b100=100;int b200=200;int b500=500;
+		int b5=5;int b10=10;int b20=20;int b50=500;int b100=100;int b200=200;int b500=500;
 	int total;
 	String[] menu=new String[5];
 	int[] preus=new int[5];
@@ -21,7 +20,6 @@ public class Fases {
 public void Fase1() {
 	// FASE 1-------------------------------------------
 	// We initialize variables at the class level to make them accessible from the whole class
-	
 	
 		}
 public void Fase2() {
@@ -86,69 +84,6 @@ public void Fase3() {
 	scan_plat.close();
 	scan_preu.close();
 	System.out.println(" El Total a pagar és :"+ total);
-	
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
+		
 }

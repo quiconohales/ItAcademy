@@ -1,10 +1,5 @@
-
 package exercici4_Restaurant;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-   
+  
 /**
  * @author  Francesc Nohales
  *
