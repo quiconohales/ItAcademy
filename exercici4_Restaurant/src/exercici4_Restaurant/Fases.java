@@ -12,19 +12,22 @@ public class Fases {
 	String[] menu=new String[5];
 	int[] preus=new int[5];
 	List <Integer> comanda= new ArrayList<>();
-	//creem els scanner per llegir info
+	
+	//we create scanners to read info
 	Scanner scan_plat = new Scanner(System.in);
 	Scanner scan_preu = new Scanner(System.in);
 	Scanner scan_plat_desitjat = new Scanner(System.in);
 	
 public void Fase1() {
 	// FASE 1-------------------------------------------
-	// Inicialitzem variables a nivell de clase per fer-las accessibles des de tota la clase
+	// We initialize variables at the class level to make them accessible from the whole class
+	
+	
 		}
 public void Fase2() {
 	
 	// FASE 2-------------------------------------------
-	// recorrem l'array solicitan nom plat i preu. 
+	// we go through the array request plate name and price.
 	for (int i = 0; i < menu.length; i++) {
 		
 		System.out.print("Introdueix el nom del plat nº " + (i+1) + ": ");
@@ -40,9 +43,10 @@ public void Fase2() {
 		 
 	}
 	System.out.println("");
-	// creem una llista on guardarem els plats escollits
-	// anirem demanan plats mentres no introdueixi 0 per sortir
-	// 
+	
+	//we create a list where we will save the chosen dishes
+	// we will ask for dishes as long as you do not enter 0 to exit
+	
 	int plats_desitjat=99;
 	while(plats_desitjat !=0) {
 		for (int i = 0; i < menu.length; i++) {
@@ -55,7 +59,7 @@ public void Fase2() {
 			comanda.add(plats_desitjat-1);
 			}
 		}
-	// Llistem la llista del plats del menu
+	// We list the list of dishes on the menu
 	for (int i = 0; i < menu.length; i++) {
 		System.out.println("El plat nº " + (i+1) + " es "+ menu[i]+ " i el seu preu es "+ preus[i]);
 		}
@@ -66,10 +70,8 @@ public void Fase2() {
 	
 	}
 public void Fase3() {
-
-	
-	// recorrem tota la llsta comanda  i en el cas que el plat introduit no estigui dintre del array de menu mostrem error
-	// en el cas contrari sumem el preu al total  
+	//we go through the whole command list and in case the introduced dish is not inside the menu array we show error 
+	// otherwise we add the price to the total
 	for (int i = 0; i < comanda.size();i++) {
 		
 			if (comanda.get(i) > menu.length) {
@@ -84,9 +86,6 @@ public void Fase3() {
 	scan_plat.close();
 	scan_preu.close();
 	System.out.println(" El Total a pagar és :"+ total);
-	
-	
-	
 	
 }
 	
