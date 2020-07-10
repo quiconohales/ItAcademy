@@ -1,9 +1,9 @@
-package views;
+package com.vehicles.project;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.floristeria.view.InputCommons;
+
 
 public class InputCommons {
 
