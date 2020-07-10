@@ -28,6 +28,24 @@ public class InputCommons {
 		
 		return answer;
 	}
+public String askCarRegistration(String questionMessage) {
+		
+		System.out.println(questionMessage);
+		//String answer = this.input.nextLine();
+		String answer="7";
+	   
+		while (!(answer.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$"))) {
+			
+			answer = this.input.nextLine();
+			if (!(answer.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$"))) {
+				System.out.println("Matrícula inválida");
+			}
+			
+		}	
+		return answer;
+
+		
+	}
 	
 	/**
 	 * Es demana un número de tipus enter per consola
@@ -114,7 +132,35 @@ public class InputCommons {
 		
 		return number;
 	}	
-	
+public double askDoubleValidate(String questionMessage) {
+		
+		double number = 0;
+		boolean numberFormat = false;
+		
+		System.out.println(questionMessage);
+		
+		while(numberFormat==false) {
+			try {
+				
+				number = this.input.nextDouble();
+				if (number>4 || number<(0.4)) {
+					numberFormat=false;
+				}else {
+					numberFormat=true;
+				}
+				
+				
+				
+			}catch(InputMismatchException e) {
+				
+				System.out.println("El valor introduït no és un número vàlid.");
+				
+			}
+			this.input.nextLine();
+		}
+		
+		return number;
+	}	
 	/**
 	 *  Es fa una pausa per consola per a poder veure els últims missatges fins que l'usuari
 	 *  premi la tecla ENTER per consola

@@ -16,117 +16,69 @@ public class Main {
 		
 		InputCommons entrada = new InputCommons (car_double);
 		
-		   
-		//System.out.println ("input your car registration   ");
-		//while(!car_registration.hasNextLine()) car_registration.next();
-		////String car_registration_value = car_registration.nextLine();
-		String car_registration_value = entrada.askString("input your car registration");
-		System.out.println("/la matricula es "+car_registration_value); 
-		
-		
-		//System.out.println ("input the trademark: ");
-		//while(!car_registration.hasNextLine()) car_registration.next();
-		////String car_trademark_value = car_registration.nextLine();
+		///////////////////////////////////////////////////////////Se piden datos de matricula,marca y color
+		String car_registration_value = entrada.askCarRegistration("input your car registration");
+		System.out.println("la matricula es "+car_registration_value); 
+				
 		String car_trademark_value = entrada.askString("input the trademark: ");
 		System.out.println("the trademark is "+car_trademark_value);
 		
-		
-		//System.out.println ("input the colour: ");
-		//while(!car_registration.hasNextLine()) car_registration.next();
-		////String car_color_value = car_registration.nextLine();
 		String car_color_value = entrada.askString("input the colour: ");
 		System.out.println("the color is "+car_color_value);
 		
-		try {
-			Car cotxe = new Car(car_registration_value,car_trademark_value,car_color_value);
-			System.out.println("Cotxe creat satisfactoriament "+car_registration_value);
-			
-			//System.out.print ("input the brand of the front tyres: ");
-			//while(!car_registration.hasNextLine()) car_registration.next();
-			////String car_brand_front_tyres_value = car_registration.nextLine();
-			String car_brand_front_tyres_value = entrada.askString("input the brand of the front tyres: ");
-			
-			
-			//System.out.print ("input the diameter of the front tyres: ");
-			//while(!car_double.hasNextDouble()) car_double.next();
-			////
-			Double car_diameter_front_tyres_value = entrada.askDouble ("input the diameter of the front tyres: ");
-			System.out.println("the diameter of the front tyres is :" + car_diameter_front_tyres_value);
+		/////////////////////////////////////////////////////////// Se crea un cotxe con los datos
 		
-			
-			
-			
-			Wheel front_tyres = new Wheel(car_brand_front_tyres_value,car_diameter_front_tyres_value);
-			List <Wheel> llista_front =new ArrayList< Wheel>();
-			try {
-				llista_front.add(front_tyres);
-				System.out.print ("se añade las ruedas delanteras a la lista ");
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-			
-			
-			
-			
-			////////////////////////////////////////////
-			//System.out.print ("input the brand of the back tyres: ");
-			//while(!car_registration.hasNextLine()) car_registration.next();
-			////String car_brand_back_tyres_value = car_registration.nextLine();
-			String car_brand_back_tyres_value = entrada.askString("input the brand of the back tyres: ");
-			
-			//System.out.print ("input the diameter of the back tyres: ");
-			//while(!car_double.hasNextDouble()) car_double.next();
-			////Double car_diameter_back_tyres_value = car_double.nextDouble();
-			Double car_diameter_back_tyres_value = entrada.askDouble("input the diameter of the back tyres: ");
-			
-			
-			Wheel back_tyres = new Wheel(car_brand_back_tyres_value,car_diameter_back_tyres_value);			
-			List <Wheel> llista_back =new ArrayList< Wheel>();
-			try {
-				llista_back.add(back_tyres);
-				System.out.print ("se añade las ruedas traseras a la lista");
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
+		Car cotxe = new Car(car_registration_value,car_trademark_value,car_color_value);
+		System.out.println("Cotxe creat satisfactoriament "+car_registration_value);
+		
+		//////////////////////////////////////////////////////// Se añaden 2 ruedas traseras con los valores introducidos
+		
+		
+		String car_brand_back_tyres_value = entrada.askString("input the brand of the back tyres: ");
+		Double car_diameter_back_tyres_value = entrada.askDoubleValidate("input the diameter of the back tyres: ");
 
-			
-			for (int i = 0; i < llista_front.size(); i++) {
-			      System.out.println("DELANTERAS"+llista_front.get(i));
-			    }
-			for (int i = 0; i < llista_back.size(); i++) {
-			      System.out.println(" TRASERAS"+ llista_back.toString());
-			    }
-			
-			
-			try {
-				
-				cotxe.addWheels(llista_front, llista_back);
-				
-				
-			} catch (Exception e) {
-				// TODO: handle exception
-				System.out.println ("ha pasaso algo "+e);
-			}			
-			
-			
-			System.out.println("   coche "+cotxe.wheels);
-			System.out.println("   color "+cotxe.color);
-			System.out.println("   Brand "+cotxe.brand);
-			
-			
-			car_registration.close();
+		Wheel back_tyres = new Wheel(car_brand_back_tyres_value, car_diameter_back_tyres_value);
+		List<Wheel> llista_back = new ArrayList<Wheel>();
+		try {
+			llista_back.add(back_tyres);
+			llista_back.add(back_tyres);
+			System.out.println("se añade las ruedas traseras a la lista"+ llista_back.size());
+			cotxe.addTwoWheels(llista_back);
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("Ha sucedido una excepción"+ e);
 		}
+
+		//////////////////////////////////////////// Se añaden 2 ruedas delanteras con los valores introducidos
 		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		String car_brand_front_tyres_value = entrada.askString("input the brand of the front tyres: ");
+		Double car_diameter_front_tyres_value = entrada.askDoubleValidate("input the diameter of the front tyres: ");
+
+		Wheel front_tyres = new Wheel(car_brand_front_tyres_value, car_diameter_front_tyres_value);
+		List<Wheel> llista_front = new ArrayList<Wheel>();
+		try {
+			llista_front.add(front_tyres);
+			llista_front.add(front_tyres);
+			System.out.println("se añade las ruedas delanteras a la lista " + llista_front.size());
+			cotxe.addTwoWheels(llista_front);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Ha sucedido una excepción"+ e);
+		}
+		/////////////////////////////////////////////////////////////////////////
+			for (int i = 0; i < llista_front.size(); i++) {
+				System.out.println("DELANTERAS" + llista_front.toString() +" sss" + llista_front.get(i));
+			}
+			for (int i = 0; i < llista_back.size(); i++) {
+				System.out.println(" TRASERAS" + llista_back.toString()+ " sss" +llista_back.get(i));
+			}
+			System.out.println("   ruedas " + cotxe.wheels);
+			System.out.println("   color " + cotxe.color);
+			System.out.println("   Brand " + cotxe.brand);
+
+			car_registration.close();
+
 
 }
 }
