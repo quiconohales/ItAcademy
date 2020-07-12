@@ -3,174 +3,153 @@ package com.vehicles.project;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-
 public class InputCommons {
 
 	private Scanner input;
-	//private InputCommons commons;
-	
-	public InputCommons(Scanner input){
+
+	public InputCommons(Scanner input) {
 		this.input = input;
 	}
-	
+
 	/**
-	 * Metode reutilitzable per a demanar a l'usuari introduir un STRING per consola
-	 * Previament mostra per consola el missatge passat per parametre 
-	 * 
-	 * @param questionMessage - missatge mostrat per consola
-	 * @return - retorna text introduït per consola
+	 * Metod for ask a string by console Previously displays the message passed by
+	 * parameter in console
 	 */
 	public String askString(String questionMessage) {
-		
+
 		System.out.println(questionMessage);
 		String answer = this.input.nextLine();
-		
+
 		return answer;
 	}
-public String askCarRegistration(String questionMessage) {
-		
+
+	public String askCarRegistration(String questionMessage) {
+
 		System.out.println(questionMessage);
-		//String answer = this.input.nextLine();
-		String answer="7";
-	   
+		String answer = "";
 		while (!(answer.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$"))) {
-			
+
 			answer = this.input.nextLine();
 			if (!(answer.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$"))) {
-				System.out.println("Matrícula inválida");
+				System.out.println("Card registration is invalid");
 			}
-			
-		}	
+		}
 		return answer;
-
-		
 	}
-	
+
 	/**
-	 * Es demana un número de tipus enter per consola
-	 * Si no té un format de tipus enter vàlid o el número no es troba dins del rang dels 
-	 * parametres "minInt" i "maxInt" s'informa de l'error per pantalla i es torna a demanar
-	 * un número a l'usuari
-	 * Retorna el número introduït per consola
+	 * An integer number is requested per console If it does not have a valid
+	 * integer format or the number is not in the range of "minInt" and "maxInt"
+	 * parameters are reported screen error and re-requested a number to the user
+	 * Returns the number entered by console
 	 */
 	public int askOption(int minInt, int maxInt) {
-		
-		return askInt("Selecciona una opció:",minInt,maxInt);
-		
+		return askInt(" Choose an option by entering a number between :", minInt, maxInt);
 	}
-	
+
+	public int askOptionBC(int minInt, int maxInt) {
+		return askInt("Select a option (1-Bike 2-Car):", minInt, maxInt);
+	}
+
 	/**
-	 * Es demana un número de tipus enter per consola
-	 * Previament es mostra el missatge passat per parametre "questionMessage"
-	 * Si no té un format de tipus enter vàlid o el número no es troba dins del rang dels 
-	 * parametres "minInt" i "maxInt" s'informa de l'error per pantalla i es torna a demanar
-	 * un número a l'usuari
-	 * Retorna el número introduït per consola
-	 * 
-	 * @param questionMessage
-	 * @param minInt
-	 * @param maxInt
-	 * @return
+	 * An integer number is requested per console If it does not have a valid
+	 * integer format or the number is not in the range of "minInt" and "maxInt"
+	 * parameters are reported screen error and re-requested a number to the user
+	 * Returns the number entered by console
 	 */
-	public int askInt(String questionMessage,int minInt, int maxInt) {
-		
-		int option= 0;
+	public int askInt(String questionMessage, int minInt, int maxInt) {
+
+		int option = 0;
 		boolean numberFormat = false;
-		
+
 		System.out.println(questionMessage);
-		
-		while(numberFormat==false) {
+
+		while (numberFormat == false) {
 			try {
-				
+
 				option = this.input.nextInt();
-				if(option>=minInt && option<=maxInt) {
-					numberFormat=true;
-				}else {
-					System.out.println("Tria una opció introduint un número entre "+minInt+ " i "+maxInt);
+				if (option >= minInt && option <= maxInt) {
+					numberFormat = true;
+				} else {
+					System.out.println("Choose an option by entering a number between " + minInt + " and " + maxInt);
 				}
-				
-			}catch(InputMismatchException e) {
-				
-				System.out.println("Tria una opció introduint un número entre "+minInt+ " i "+maxInt);
-				
+
+			} catch (InputMismatchException e) {
+
+				System.out.println("Choose an option by entering a number between " + minInt + " and " + maxInt);
+
 			}
 			this.input.nextLine();
 		}
-		
+
 		return option;
 	}
-	
+
 	/**
-	 * Es demana a l'usuari que introdueixi un número amb o sense decimals per consola
-	 * Mentre el valor introduït per l'usuari no tingui un format numèric correcte es continua demanant
-	 * que introduiexi el número de nou per consola
-	 * 
-	 * @param questionMessage : missage a mostrar per consola previament a la introducció del número
-	 * @return retorna - número introduït per consola
+	 * The user is asked to enter a number with or without decimals per console As
+	 * long as the value entered by the user does not have a correct numeric format
+	 * it is still requested enter the number again by console
 	 */
 	public double askDouble(String questionMessage) {
-		
+
 		double number = 0;
 		boolean numberFormat = false;
-		
+
 		System.out.println(questionMessage);
-		
-		while(numberFormat==false) {
+
+		while (numberFormat == false) {
 			try {
-				
+
 				number = this.input.nextDouble();
-				numberFormat=true;
-				
-			}catch(InputMismatchException e) {
-				
-				System.out.println("El valor introduït no és un número vàlid.");
-				
+				numberFormat = true;
+
+			} catch (InputMismatchException e) {
+
+				System.out.println("The value is not valid. ");
+
 			}
 			this.input.nextLine();
 		}
-		
+
 		return number;
-	}	
-public double askDoubleValidate(String questionMessage) {
-		
+	}
+
+	public double askDoubleValidate(String questionMessage) {
+
 		double number = 0;
 		boolean numberFormat = false;
-		
+
 		System.out.println(questionMessage);
-		
-		while(numberFormat==false) {
+
+		while (numberFormat == false) {
 			try {
-				
+
 				number = this.input.nextDouble();
-				if (number>4 || number<(0.4)) {
-					numberFormat=false;
-				}else {
-					numberFormat=true;
+				if (number < 4 && number > (0.4)) {
+					numberFormat = true;
+				} else {
+					numberFormat = false;
 				}
-				
-				
-				
-			}catch(InputMismatchException e) {
-				
-				System.out.println("El valor introduït no és un número vàlid.");
-				
+
+			} catch (InputMismatchException e) {
+
+				System.out.println("The value is not valid. ");
+
 			}
 			this.input.nextLine();
 		}
-		
+
 		return number;
-	}	
+	}
+    
 	/**
-	 *  Es fa una pausa per consola per a poder veure els últims missatges fins que l'usuari
-	 *  premi la tecla ENTER per consola
-	 *  
-	 */
-	
+	 * Pause for console to be able to view the latest messages until
+	 * the user presses the ENTER key for console
+	*/
+
 	public void pause() {
-		System.out.println("Prem la tecla ENTER/INTRO per a tornar al menu...");
+		System.out.println("Press a the key ENTER/INTRO for continue...");
 		this.input.nextLine();
 	}
-	
-	
+
 }
