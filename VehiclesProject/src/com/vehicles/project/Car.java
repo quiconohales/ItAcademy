@@ -9,9 +9,7 @@ public class Car extends Vehicle {
 	}
 
 	public void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception {
-		
-		System.out.println("sssdddddd" + frontWheels.size());
-		
+						
 		addTwoWheels(frontWheels);
 		addTwoWheels(backWheels);
 	}

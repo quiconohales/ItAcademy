@@ -148,7 +148,7 @@ public class InputCommons {
 	*/
 
 	public void pause() {
-		System.out.println("Press a the key ENTER/INTRO for continue...");
+		System.out.println("Press a the key ENTER to continue...");
 		this.input.nextLine();
 	}
 

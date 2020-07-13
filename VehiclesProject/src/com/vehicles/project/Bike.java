@@ -21,7 +21,7 @@ public class Bike extends Vehicle {
 		Wheel FrontWheel = wheels.get(0);
 
 		this.wheels.add(FrontWheel);
-		// this.wheels.add(rightWheel);
+		
 	}
 
 	public void addBackWheel(List<Wheel> wheels) throws Exception {
@@ -32,7 +32,7 @@ public class Bike extends Vehicle {
 		Wheel BackWheel = wheels.get(0);
 
 		this.wheels.add(BackWheel);
-		// this.wheels.add(rightWheel);
+		
 
 }
 
