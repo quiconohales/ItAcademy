@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.vehicles.project.Vehicle" project="VehiclesProject" 
     file="/VehiclesProject/src/com/vehicles/project/Vehicle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="543" y="96"/>    
+    <position height="-1" width="-1" x="534" y="229"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
