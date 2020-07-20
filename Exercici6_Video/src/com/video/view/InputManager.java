@@ -83,12 +83,14 @@ public class InputManager {
 				String URL = commons.askString("Quin es el nom de la URL del video que vols crear?:");
 				String title = commons.askString("Quin es el titol del video que vols crear?:");
 				String[]tags = commons.askList("Quin es la llista de tags que vols crear?:");
-
-
-				System.out.println("videos creada correctament.");
-				
+				Users user = controller.getCurrentuser();
+				if (user==null) {
+					System.out.println(" Todavia no has creado un usuario");
+					return;
+				}
+				System.out.println("videos creada correctamente");
 				correctFormat=true;
-				this.controller.createvideos(URL,title,tags);				
+				this.controller.createvideos(user,URL,title,tags);				
 			}catch(Exception e) {
 				System.out.println(e.getMessage());
 				System.out.println("Torna a introduir les dades del video de nou.");
@@ -117,27 +119,30 @@ public class InputManager {
 	
 	public void showvideo() {
 		
-		this.view.listVideo();
+		//this.view.listVideo();
 		
-		
-		
-		
-		//System.out.println("2 selectCurrentvideos");
-		int size = list.size();
-		
-		if (size>0) { //Si ja s'ha creat alguna videos
-			
-			String outputMenu2 = view.showMenuvideosNames(list);
-			System.out.println(outputMenu2);
-			
-			int option = commons.askInt("Selecciona una videos actual:",1, size);
-			
-			videos newCurrentvideos = list.get(option-1);
-			controller.selectCurrentvideos(newCurrentvideos);
-			
-		}else { //No hi ha cap videos creada
-			System.out.println("Encara no has creat cap videos.");
+
+		if(controller.getCurrentuser()==null) {
+			System.out.println("Encara no has seleccionat una floristeria actual.");
+		}else {
+			Users currentUser = controller.getCurrentuser();
+			String outputStock = this.view.listVideo(currentUser);
+			System.out.println(outputStock);
 		}
+		//System.out.println("2 selectCurrentvideos");
+//		if (size>0) { //Si ja s'ha creat alguna videos
+//			
+//			String outputMenu2 = view.showMenuvideosNames(list);
+//			System.out.println(outputMenu2);
+//			
+//			int option = commons.askInt("Selecciona una videos actual:",1, size);
+//			
+//			videos newCurrentvideos = list.get(option-1);
+//			controller.selectCurrentvideos(newCurrentvideos);
+//			
+//		}else { //No hi ha cap videos creada
+//			System.out.println("Encara no has creat cap videos.");
+//		}
 	}
 
 //	public void showvideos() {

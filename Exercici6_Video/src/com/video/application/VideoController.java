@@ -15,7 +15,7 @@ import com.video.persistence.*;
 
 public class VideoController {
 	private VideoClubRepository videoRepository;
-	private Video currentSelectedvideos = null; 
+	private Users currentSelectedUser = null; 
 	
 	public VideoController(){
 		this.videoRepository = new VideoClubRepository(); 
@@ -27,7 +27,7 @@ public class VideoController {
 		this.videoRepository.addUser(user);
 		this.currentSelectedUser = user; 
 	}	
-	public void createvideos(String URL, String title,String[] tags) throws Exception{
+	public void createvideos(Users user,String URL, String title,String[] tags) throws Exception{
 		Video video = new Video(URL,title,tags);
 		user.addVideo(video);
 		
@@ -38,12 +38,14 @@ public class VideoController {
 	
 	
 	
-	public void selectCurrentuser(videos currentSelectedvideos) {
+	public void selectCurrentuser(Users currentSelectedUser) {
 		this.currentSelectedUser = currentSelectedUser;
 	}
 	
 	
-	
+	public Users getCurrentuser() {
+		return this.currentSelectedUser;
+	}
 	
 	
 	
@@ -82,7 +84,5 @@ public class VideoController {
 	
 
 	
-	public videos getCurrentvideos() {
-		return this.currentSelectedvideos;
-	}
+
 }
