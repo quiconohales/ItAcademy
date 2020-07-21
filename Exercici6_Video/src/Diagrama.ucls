@@ -64,18 +64,18 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.video.view.InputManager" project="Exercici6_Video" 
-    file="/Exercici6_Video/src/com/video/view/InputManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="296" y="93"/>    
+  <class id="8" language="java" name="com.video.view.VideosView" project="Exercici6_Video" 
+    file="/Exercici6_Video/src/com/video/view/VideosView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="546" y="213"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.video.view.VideosView" project="Exercici6_Video" 
-    file="/Exercici6_Video/src/com/video/view/VideosView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="546" y="213"/>    
+  <class id="9" language="java" name="com.video.view.InputManager" project="Exercici6_Video" 
+    file="/Exercici6_Video/src/com/video/view/InputManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="120" x="326" y="-10"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -99,7 +99,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="16">    
-    <end type="SOURCE" refId="8" navigable="false">      
+    <end type="SOURCE" refId="9" navigable="false">      
       <attribute id="17" name="controller"/>      
       <multiplicity id="18" minimum="0" maximum="1"/>    
     </end>    
@@ -107,7 +107,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="19">    
-    <end type="SOURCE" refId="8" navigable="false">      
+    <end type="SOURCE" refId="9" navigable="false">      
       <attribute id="20" name="commons"/>      
       <multiplicity id="21" minimum="0" maximum="1"/>    
     </end>    
@@ -131,11 +131,11 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="28">    
-    <end type="SOURCE" refId="8" navigable="false">      
+    <end type="SOURCE" refId="9" navigable="false">      
       <attribute id="29" name="view"/>      
       <multiplicity id="30" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

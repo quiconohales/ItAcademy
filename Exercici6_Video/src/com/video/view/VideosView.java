@@ -13,10 +13,7 @@ public class VideosView {
 	
 	}
 
-	public void createUser() {
-	}
-	public void createVideo() {
-	}
+
 	public void listVideo(Users user) {
 		int cont=0;
 		System.out.println("Nom del usuari: "+ user.getName());
