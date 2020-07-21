@@ -14,10 +14,10 @@ public class Users {
 
 	public Users(String name, String surname,String password, String dateRegister) throws Exception{
 		
-		if(name.contentEquals("")) throw new EmptyFieldException("The field name can't empty");
-		if(surname.contentEquals("")) throw new EmptyFieldException("The field name can't empty!");
-		if(password.contentEquals("")) throw new EmptyFieldException("The field name can't empty!");
-		if(dateRegister.contentEquals("")) throw new EmptyFieldException("The field name can't empty!");
+		if(name.contentEquals("")) throw new EmptyFieldException("El camp nom no pot està buit  ");
+		if(surname.contentEquals("")) throw new EmptyFieldException("El camp cognom no pot està buit  ");
+		if(password.contentEquals("")) throw new EmptyFieldException("El camp contrasenya no pot està buit  ");
+		if(dateRegister.contentEquals("")) throw new EmptyFieldException("El camp data registre no pot està buit  ");
 		this.name = name;
 		this.surname = surname;
 		this.password = password;

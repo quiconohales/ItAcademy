@@ -3,45 +3,40 @@ import com.video.domain.*;
 
 public class VideosView {
 	
-	public String showMainMenu() {
-	String output="";
-		
-	System.out.println("Select option");
-	System.out.println("1- Create a new User");
-	System.out.println("2- Create a new Video");
-	System.out.println("3- List your Videos");
-	System.out.println("0- to Exit" );
-	return output;
+	public void showMainMenu() {
+			
+	System.out.println("Selecciona una  opció");
+	System.out.println("1- Crea un nou usuari");
+	System.out.println("2- Crea un nou Video");
+	System.out.println("3- Llista els Videos");
+	System.out.println("4- Per finalitzar" );
+	
 	}
 
 	public void createUser() {
 	}
 	public void createVideo() {
 	}
-	public String listVideo(Users user) {
-		String output="";
+	public void listVideo(Users user) {
 		int cont=0;
-		System.out.println(" User Name: "+ user.getName());
-		System.out.println(" User Surname: "+ user.getSurname());
-		System.out.println(" List videos : "+ user.getVideoList());
+		System.out.println("Nom del usuari: "+ user.getName());
+		System.out.println("Cognom del usuari"+ user.getSurname());
+		System.out.println("Data registre : "+ user.getDateRegister());
+		System.out.println("");
+		
 		
 		for (Video video: user.listVideo()) {
 			cont++;
-			System.out.println(" El video nº :" + cont);
-			System.out.println(" URL : "+ video.getURL());
-			System.out.println(" Title : "+ video.getTitle());
-			System.out.println(" Tags : "+ video.getTags());
+			System.out.println("El video nº :" + cont);
+			System.out.println("URL : "+ video.getURL());
+			System.out.println("Títol : "+ video.getTitle());
+			video.getTags();
+			System.out.println(" ");
 		}
-		
-		if(cont==0) output +="Todavia no has creado ningun video.";
-		return output;
+		if(cont==0) System.out.println("Encara no has creat cap video.");
 	}
-	public String endProgram() {
-		String output = "";
-		output += "------------------------------------- \n";
-		output += "      	   FIN DEL PROGRAMA           \n";
-		output += "------------------------------------- \n";
-		return output;
-		
+	
+	public void endProgram() {
+		System.out.println("Programa finalitzat");  
 	}
 }
