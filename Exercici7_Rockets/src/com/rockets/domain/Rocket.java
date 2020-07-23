@@ -1,6 +1,8 @@
 package com.rockets.domain;
 
+import java.io.Console;
 import java.util.List;
+import com.rockets.main.*;
 
 public class Rocket implements Runnable {
 	
@@ -11,20 +13,36 @@ public class Rocket implements Runnable {
 	private String code;
 	private List<Propeller> propeller;
 	public void run() {
-		System.out.println("");
-		System.out.println("Coete :"+code+" nº de propulsors :"+propeller.size());
 		
 		
 		
-		for (int i = 0; i<propeller.size() ; i++) {
-			System.out.println("Propeller "+(i+1));
-			System.out.println("Power:"+propeller.get(i).getPower());
-			System.out.println("Max Power:"+propeller.get(i).getmaxPower());
-				//System.out.println("propulsor :"+propeller.size());
-				//get(0)+" "+propeller.get(1)+" "+propeller.get(2));
-				//System.out.print(" HILO "+ code..);
-			}
+		while (true) {
+			 
+		     
+			 try {
+				 int u=0;
+		            
+		            //for (int i = 0; i < propeller.size(); i++) {
+				 		//System.out.print('\u000C');
+				 		System.out.flush();
+				 		System.out.println("Coete :"+code);
+		            	System.out.println("Nº de propulsors :"+propeller.size());
+						System.out.println("Propeller " + (u + 1));
+						System.out.println("Power:" + propeller.get(u).getPower());
+						System.out.println("Max Power:" + propeller.get(u).getmaxPower());
+						
+					//	new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+						
+					//}
+
+		        } catch (Exception e) {
+
+		            /*No hacer nada*/
+
+		        }
+					
 			
+		}	
 		
 		 
 	}

@@ -4,7 +4,12 @@ import com.video.domain.Video;
 
 import com.video.persistence.*;
 
-
+/**
+ * 
+ * Aquesta classe s'encarrega d'enllaça amb la capa de model/persistencia
+ * Tè varis metodes per crear usuaris, videos, obtenir usuari actual
+ * 
+ */
 
 public class VideoController {
 	private VideoClubRepository videoRepository;

@@ -1,8 +1,15 @@
 package com.video.view;
-
 import java.text.SimpleDateFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+/**
+ * 
+ * Aquesta classe s'encarrega de filtrar les dades introduides per l'usuari.
+ * permet controllar la entrada de una cadena,una llista de tags,opcions de menu, 
+ * valor doble.
+ *
+ */
 public class InputCommons {
 	private Scanner input;
 	public InputCommons(Scanner input){

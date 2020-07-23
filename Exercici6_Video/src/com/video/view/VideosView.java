@@ -1,6 +1,10 @@
 package com.video.view;
 import com.video.domain.*;
-
+/**
+ * Aquesta classe s'encarrega de visualtzar els menus i llistats 
+ * mostrar el menu principal 
+ *
+ */
 public class VideosView {
 	
 	public void showMainMenu() {

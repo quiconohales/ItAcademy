@@ -1,10 +1,22 @@
 package com.video.domain;
 import com.video.exceptions.EmptyFieldException;
+/**
+ * 
+ * @author Francesc Nohales
+ * Aquesta clase defineix els videos de l'aplicaciò
+ *
+ */
 
 public class Video{
 	protected String URL;
 	protected String title;
 	protected String[] tags;
+	/*
+	 * Constructor para los usuarios
+	 * @param name URL URL del video
+	 * @param title title del video
+	 * @param tags tags del video
+	 */
 
 	public Video (String URL, String title,String[]tags) throws Exception{
 		if(URL.contentEquals("")) throw new EmptyFieldException("El camp URL no pot està buit ");

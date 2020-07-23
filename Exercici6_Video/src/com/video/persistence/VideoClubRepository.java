@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.video.domain.*;
-
+/**
+ * 
+ * Aquesta classe s'encarrega de registrar els videos i els usuaris
+ * 
+ */
 
 public class VideoClubRepository { 
 

@@ -3,15 +3,27 @@ package com.video.domain;
 import com.video.exceptions.EmptyFieldException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 
+ * @author Francesc Nohales
+ * Aquesta clase defineix els usuaris de l'aplicaciò
+ *
+ */
 public class Users {
-
+	//Camps de clase
 	protected String name; 
 	protected String surname;
 	protected String password;
 	protected String dateRegister;
 	protected List<Video> videoList;
-
+	/*
+	 * Constructor para los usuarios
+	 * @param name Nombre usuario
+	 * @param surname Apellido usuario
+	 * @param password Contraseña usuario
+	 * @param dateRegister Fecha registro usuario
+	 * 
+	 */
 	public Users(String name, String surname,String password, String dateRegister) throws Exception{
 		
 		if(name.contentEquals("")) throw new EmptyFieldException("El camp nom no pot està buit  ");
@@ -33,6 +45,9 @@ public class Users {
 	}
 	public String getName() {
 		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getSurname() {
 		return surname;
@@ -58,8 +73,6 @@ public class Users {
 	public void setVideoList(List<Video> videoList) {
 		this.videoList = videoList;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	
 }

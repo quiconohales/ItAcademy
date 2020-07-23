@@ -17,7 +17,10 @@ public class Main {
 		//Rocket cohete1= new Rocket("coete1",3);
 		//cohete1.run();
 		//
-		
+
+
+       
+
 		
 		
 		//****************** coet 1 *******************
@@ -25,7 +28,7 @@ public class Main {
 		propeller1.add(new Propeller(11,61));
 		propeller1.add(new Propeller(21,61));
 		propeller1.add(new Propeller(31,91));
-		Runnable r1=new Rocket("coete1",propeller1);
+		Runnable r1=new Rocket(" 1 ",propeller1);
 		Thread t1=new Thread(r1);
 		t1.start();
 		try {
@@ -41,7 +44,7 @@ public class Main {
 		propeller2.add(new Propeller(10,60));
 		propeller2.add(new Propeller(20,60));
 		propeller2.add(new Propeller(30,90));
-		Runnable r2=new Rocket("coete2",propeller2);
+		Runnable r2=new Rocket(" 2 ",propeller2);
 		Thread t2=new Thread(r2);
 		t2.start();
 		try {

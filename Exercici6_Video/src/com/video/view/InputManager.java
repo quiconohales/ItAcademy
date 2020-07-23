@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 import com.video.application.VideoController;
 import com.video.domain.Users;
-
+/**
+ * 
+ * Aquesta classe s'encarrega d'interactuar amb l'usuari.
+ * Tè varis metodes per crear usuaris, videos, llista videos,
+ * mostrar el menu 
+ *
+ */
 
 
 public class InputManager {
