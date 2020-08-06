@@ -4,7 +4,9 @@ import java.util.Scanner;
 import com.rocket.view.*;
 
 public class Rocket extends Thread {
-	
+	boolean sortir = false;
+	String code;
+	List<Propeller> propeller;
 	public String getCode() {
 		return code;
 	}
@@ -19,9 +21,7 @@ public class Rocket extends Thread {
 		this.propeller = propeller;
 	}
 
-	boolean sortir = false;
-	String code;
-	List<Propeller> propeller;
+	
 	
 	public Rocket(String code, List<Propeller> propeller) {
 		this.code = code;
@@ -43,14 +43,14 @@ public class Rocket extends Thread {
 		
 		int valor = propeller.get(propulsor).getPower() - Value;
 		if (valor >= 0) {
-			propeller.set(propulsor, new Propeller((propeller.get(propulsor).getPower() + Value),
+			propeller.set(propulsor, new Propeller((propeller.get(propulsor).getPower() - Value),
 					propeller.get(propulsor).getmaxPower()));
 			System.out.println("holding back:");
 		} else {
 			System.out.println(
 					"It is not possible to reduce the minimum value of the propeller:" + (propeller.get(propulsor).getPower() - Value));
 		}
-		mostrar();
+		
 		} catch (Exception e) {
 			System.out.println("An exception occurred");
 		}
@@ -66,9 +66,9 @@ public class Rocket extends Thread {
 					propeller.get(propulsor).getmaxPower()));
 			System.out.println("speeding up");
 		} else {
-			System.out.println("The propeller maxim value cannot be exceeded:" + (propeller.get(propulsor).getPower() + Value));
+			System.out.println("The propeller maxim value cannot be exceeded:" + (propeller.get(propulsor).getmaxPower()));
 		}
-		mostrar();
+		
 		} catch (Exception e) {
 			System.out.println("An exception occurred");
 		}
@@ -78,11 +78,10 @@ public class Rocket extends Thread {
 		try {
 			System.out.flush();
 			System.out.println("Rocket.............................. :" + code);
-			System.out.println("Number of Propellers :" + propeller.size());
+			System.out.println("Number of Propellers:" + propeller.size());
 			for (int i = 0; i < propeller.size(); i++) {
-				System.out.println("Propeller " + (i + 1));
-				System.out.println("Power:" + propeller.get(i).getPower());
-				System.out.println("Max Power:" + propeller.get(i).getmaxPower());
+				System.out.println("Propeller:" + (i + 1)+" "+" Power:" + propeller.get(i).getPower()+" "+
+				" Max Power:" + propeller.get(i).getmaxPower());
 			}
 		} catch (Exception e) {
 			System.out.println("An exception occurred");

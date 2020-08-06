@@ -1,6 +1,4 @@
 package com.rocket.main;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,23 +6,27 @@ import java.util.Scanner;
 
 import com.rocket.domain.*;
 import com.rocket.view.*;
-
+/** 
+ *  
+ * @author Francesc Nohales
+ * Exercici 7 Rockets Backend - Barcelona Activa - It Academy
+ * Es fan servir dos fils independents, un per cada coet.
+ */
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner entrada;
-		entrada = new Scanner(System.in);
-		//String lectura = entrada.nextLine();
-		InputManager ui = new InputManager();
-		RocketsView vista = new RocketsView();
-		InputCommons ic = new InputCommons(entrada);
+		Scanner input;
+		input = new Scanner(System.in);
 		
-		//Inicialitzem coets segons parametres enunciat
+		RocketsView vista = new RocketsView();
+		InputCommons ic = new InputCommons(input);
+		
+		//Inicialitzem coets segons parametres del  enunciat
 		
 		//****************** coet 1 *******************
 		List <Propeller> propeller1= new ArrayList<Propeller>();
-		propeller1.add(new Propeller(11,61));
-		propeller1.add(new Propeller(21,61));
+		propeller1.add(new Propeller(11,15));
+		propeller1.add(new Propeller(21,29));
 		propeller1.add(new Propeller(31,91));
 		Rocket r1 = new Rocket(" 1 ",propeller1);
 		r1.start();
@@ -51,6 +53,7 @@ public class Main {
 					r1.stop();// 
 					System.out.println("Stopping Rocket 2");
 					r2.stop();
+					vista.endProgram();
 				} catch (Exception e) {
 					System.out.println("An exception occurred");;
 				}
@@ -59,33 +62,35 @@ public class Main {
 			vista.showPropulsorMenu();
 			int SelectPropulsor= ic.askInt("", 1, 9);
 			vista.showOperationMenu();
-			int SelectOperation = ic.askOption(1,3);
+			int SelectOperation = ic.askOption(1,2);
 			vista.showOperationValue();
 			int SelectOperationValue = ic.askOption(1,9);
 			
 			switch(SelectOperation) {
 			 case 1 :
 				 	if (SelectCohet==1) {
-				 		r1.acelerar(SelectPropulsor,SelectOperationValue);
+				 		r1.acelerar((SelectPropulsor-1),SelectOperationValue);
 				 	}else {
-				 		r2.acelerar(SelectPropulsor,SelectOperationValue);
+				 		r2.acelerar((SelectPropulsor-1),SelectOperationValue);
 				 	}
 				 	break; 
 			   
 			   case 2 :
 				   if (SelectCohet==1) {
-				 		r1.frenar(SelectPropulsor,SelectOperationValue);
+				 		r1.frenar((SelectPropulsor-1),SelectOperationValue);
 				 	}else {
-				 		r2.frenar(SelectPropulsor,SelectOperationValue);
+				 		r2.frenar((SelectPropulsor-1),SelectOperationValue);
 				 	}
 				 	break; 
 			   
 			   default : 
-			     
+				  
 			}
-
+				r1.mostrar();
+				   r2.mostrar();
+			     
 		}
-		entrada.close();
+		input.close();
 	}
 
 }
