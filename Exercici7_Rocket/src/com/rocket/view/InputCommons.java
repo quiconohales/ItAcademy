@@ -40,12 +40,12 @@ public class InputCommons {
 				if(option>=minInt && option<=maxInt) {
 					numberFormat=true;
 				}else {
-					System.out.println("Tria una opció introduint un número entre "+minInt+ " i "+maxInt);
+					System.out.println("Choose an option by entering a number between "+minInt+ " i "+maxInt);
 				}
 				
 			}catch(InputMismatchException e) {
 				
-				System.out.println("Tria una opció introduint un número entre "+minInt+ " i "+maxInt);
+				System.out.println("Choose an option by entering a number between "+minInt+ " i "+maxInt);
 				
 			}
 			this.input.nextLine();
@@ -69,7 +69,7 @@ public class InputCommons {
 				
 			}catch(InputMismatchException e) {
 				
-				System.out.println("El valor introduït no és un número vàlid.");
+				System.out.println("The value entered is not a valid number.");
 				
 			}
 			this.input.nextLine();
@@ -80,7 +80,7 @@ public class InputCommons {
 	
 	
 	public void pause() {
-		System.out.println("Prem la tecla ENTER/INTRO per a tornar al menu...");
+		System.out.println("Press the ENTER key to return to the menu...");
 		this.input.nextLine();
 	}
 	
