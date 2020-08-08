@@ -1,5 +1,5 @@
 package com.rocket.view;
-import com.rocket.domain.*;
+
 
 public class RocketsView {
 	public void  showCoetMenu() {
@@ -9,7 +9,7 @@ public class RocketsView {
 		System.out.println("3- Exit ");
 	
 	}
-	public void  showPropulsorMenu() {
+	public void  showPropellerMenu() {
 		System.out.println("Select a number of Propeller:");
 	
 	}

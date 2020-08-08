@@ -5,7 +5,7 @@ public class RocketsView {
 
 
 	
-	public  showMainMenu() {
+	public string showMainMenu() {
 	String ok="ok";
 	System.out.println("Selecciona una  opció");
 	System.out.println("1- Crea un nou usuari");
